@@ -11,7 +11,7 @@ export default function GalleryPage() {
     <>
       <PageHero title="Zrealizované projekty" image="/sources/SLIEZKY DOM/VYBRATE/sliezky-8.jpg" />
 
-      <section className="bg-[#f8f9fa] py-20">
+      <section className="bg-[var(--brand-blue)] py-20">
         <div className="site-container">
           <ProjectStackGallery />
         </div>

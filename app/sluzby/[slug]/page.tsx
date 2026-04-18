@@ -44,7 +44,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         <div className="site-container">
           <div className="grid items-start gap-10 lg:grid-cols-[40%_60%]">
             <div className="flex flex-col">
-              <h2 className="relative mb-[30px] text-[2.5rem] text-[var(--ink)] after:mt-4 after:block after:h-1 after:w-[60px] after:bg-[#265286] after:content-['']">
+              <h2 className="relative mb-[30px] text-[2.5rem] font-light text-[var(--ink)] after:mt-4 after:block after:h-1 after:w-[60px] after:bg-[#265286] after:content-['']">
                 {service.title}
               </h2>
               <div className="mb-10 space-y-5 text-[1.1rem] leading-[1.8] text-[#555]">
