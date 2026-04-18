@@ -26,7 +26,7 @@ export default function ServicesPage() {
                 <div className="relative mb-5 h-10 w-10">
                   <Image src={service.icon} alt={service.title} fill className="object-contain" sizes="40px" />
                 </div>
-                <h2 className="mb-3 text-[1.6rem] font-semibold text-[var(--ink)]">{service.title}</h2>
+                <h2 className="mb-3 text-[1.6rem] font-light text-[var(--ink)]">{service.title}</h2>
                 <p className="text-base leading-[1.6] text-[#555]">{service.summary}</p>
               </Link>
             ))}

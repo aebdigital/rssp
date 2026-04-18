@@ -105,7 +105,10 @@ export function SiteHeader() {
                     servicesActive ? "after:w-full" : "after:w-0"
                   } after:absolute after:bottom-[-3px] after:left-0 after:h-0.5 after:bg-current after:transition-all hover:after:w-full`}
                 >
-                  Služby
+                  <span className="inline-flex items-center gap-2">
+                    Služby
+                    <span className="text-[10px]">▼</span>
+                  </span>
                 </Link>
                 <div className="invisible absolute left-0 top-full pt-4 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                   <ul className="min-w-[280px] rounded-lg bg-white py-2 shadow-[0_8px_25px_rgba(0,0,0,0.15)]">
@@ -139,7 +142,10 @@ export function SiteHeader() {
                     sustainabilityActive ? "after:w-full" : "after:w-0"
                   } after:absolute after:bottom-[-3px] after:left-0 after:h-0.5 after:bg-current after:transition-all hover:after:w-full`}
                 >
-                  Udržateľnosť
+                  <span className="inline-flex items-center gap-2">
+                    Udržateľnosť
+                    <span className="text-[10px]">▼</span>
+                  </span>
                 </Link>
                 <div className="invisible absolute left-0 top-full pt-4 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                   <ul className="min-w-[240px] rounded-lg bg-white py-2 shadow-[0_8px_25px_rgba(0,0,0,0.15)]">
@@ -196,7 +202,7 @@ export function SiteHeader() {
               </Link>
               <div className="space-y-3">
                 <Link href="/sluzby" className="block text-xl text-[var(--brand-blue)]">
-                  Služby
+                  Služby ▼
                 </Link>
                 <div className="space-y-2 pl-4">
                   {serviceLinks.map((item) => (
@@ -211,7 +217,7 @@ export function SiteHeader() {
               </Link>
               <div className="space-y-3">
                 <Link href="/certifikaty" className="block text-xl text-[var(--brand-blue)]">
-                  Udržateľnosť
+                  Udržateľnosť ▼
                 </Link>
                 <div className="space-y-2 pl-4">
                   {sustainabilityLinks.map((item) => (

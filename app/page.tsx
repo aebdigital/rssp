@@ -39,7 +39,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-black/20" />
                 </div>
                 <div className="absolute bottom-[5%] left-[5%] z-10 max-w-[90%]">
-                  <h3 className="mb-2 text-[1.6rem] font-semibold [text-shadow:0_2px_4px_rgba(0,0,0,0.3)]">
+                  <h3 className="mb-2 text-[1.6rem] font-light [text-shadow:0_2px_4px_rgba(0,0,0,0.3)]">
                     {service.title}
                   </h3>
                   <p className="text-base leading-[1.4] text-white/90 [text-shadow:0_1px_2px_rgba(0,0,0,0.3)]">
@@ -82,19 +82,8 @@ export default function HomePage() {
                     →
                   </div>
                 </div>
-                <div className="absolute right-0 top-1/2 flex w-[50%] -translate-y-1/2 items-center gap-3 bg-[var(--brand-blue)] p-[15px] shadow-[0_4px_20px_rgba(0,0,0,0.15)]">
-                  <div className="flex-1">
-                    <h3 className="text-[1.3rem] font-semibold text-white">{project.title}</h3>
-                  </div>
-                  <div className="relative h-[50px] w-[50px] shrink-0 rounded-lg bg-white p-1.5">
-                    <Image
-                      src={project.crestImage}
-                      alt={project.title}
-                      fill
-                      className="object-contain p-1"
-                      sizes="50px"
-                    />
-                  </div>
+                <div className="absolute right-0 top-1/2 w-[58%] -translate-y-1/2 bg-[var(--brand-blue)] p-[15px] shadow-[0_4px_20px_rgba(0,0,0,0.15)]">
+                  <h3 className="text-[1.3rem] font-light text-white">{project.title}</h3>
                 </div>
               </article>
             ))}

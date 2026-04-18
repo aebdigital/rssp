@@ -15,7 +15,7 @@ export default function ContactPage() {
         <div className="site-container">
           <div className="grid gap-[60px] lg:grid-cols-2">
             <div>
-              <h3 className="mb-5 text-2xl font-semibold text-[rgb(30,28,89)]">Office</h3>
+              <h3 className="mb-5 text-2xl font-light text-[rgb(30,28,89)]">Office</h3>
               <p className="text-[1.1rem] leading-[1.6] text-[#555]">
                 Eleny Maróthy Šoltésovej 5397/3
                 <br />
@@ -31,7 +31,7 @@ export default function ContactPage() {
               </p>
             </div>
             <div>
-              <h3 className="mb-5 text-2xl font-semibold text-[rgb(30,28,89)]">Sídlo spoločnosti / poštová adresa</h3>
+              <h3 className="mb-5 text-2xl font-light text-[rgb(30,28,89)]">Sídlo spoločnosti / poštová adresa</h3>
               <p className="text-[1.1rem] leading-[1.6] text-[#555]">
                 Banská Belá 501
                 <br />
@@ -44,12 +44,12 @@ export default function ContactPage() {
 
       <section className="bg-white py-20">
         <div className="site-container">
-          <h2 className="section-title-underline mb-[60px] text-[clamp(2rem,4vw,2.5rem)] font-bold text-[#1a1a1a]">
+          <h2 className="section-title-underline mb-[60px] text-[clamp(2rem,4vw,2.5rem)] font-light text-[#1a1a1a]">
             Fakturačné údaje
           </h2>
           <div className="grid gap-[60px] lg:grid-cols-2">
             <div>
-              <h3 className="mb-5 text-[1.3rem] font-semibold leading-[1.4] text-[rgb(30,28,89)]">
+              <h3 className="mb-5 text-[1.3rem] font-light leading-[1.4] text-[rgb(30,28,89)]">
                 {company.name}
               </h3>
               <p className="text-base leading-[1.6] text-[#555]">
@@ -69,7 +69,7 @@ export default function ContactPage() {
               </p>
             </div>
             <div>
-              <h3 className="mb-5 text-[1.3rem] font-semibold leading-[1.4] text-[rgb(30,28,89)]">Spoločnosť zapísaná</h3>
+              <h3 className="mb-5 text-[1.3rem] font-light leading-[1.4] text-[rgb(30,28,89)]">Spoločnosť zapísaná</h3>
               <p className="text-base leading-[1.6] text-[#555]">
                 Spoločnosť je zapísaná v Obchodnom registry Okresného súdu Banská Bystrica.
               </p>

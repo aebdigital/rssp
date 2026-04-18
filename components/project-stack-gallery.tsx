@@ -9,53 +9,44 @@ export function ProjectStackGallery() {
   const [openSlug, setOpenSlug] = useState<string | null>(null);
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-[110px]">
       {projects.map((project, index) => {
         const reversed = index % 2 === 1;
         const isOpen = openSlug === project.slug;
 
         return (
           <div key={project.slug}>
-            <article className="grid items-center gap-0 lg:grid-cols-2">
-              <div className={`${reversed ? "lg:order-2" : ""}`}>
-                <div className="relative h-[300px] overflow-hidden shadow-[0_8px_28px_rgba(0,0,0,0.16)] md:h-[420px]">
-                  <Image
-                    src={project.coverImage}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                  />
-                </div>
+            <article
+              className={`relative mx-auto flex h-auto w-full max-w-[1100px] flex-col overflow-visible bg-white shadow-[0_5px_20px_rgba(0,0,0,0.1)] transition hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)] md:h-[480px] md:w-[min(50vw,760px)] ${
+                reversed ? "md:translate-x-[-20vw] hover:md:translate-x-[-20vw] hover:md:-translate-y-[5px]" : "md:translate-x-[20vw] hover:md:translate-x-[20vw] hover:md:-translate-y-[5px]"
+              }`}
+            >
+              <div className="relative h-[320px] overflow-hidden md:h-full">
+                <Image
+                  src={project.coverImage}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition duration-300 hover:scale-105"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
               </div>
 
               <div
-                className={`relative bg-white px-6 py-8 shadow-[0_8px_28px_rgba(0,0,0,0.08)] md:px-10 md:py-10 ${
-                  reversed ? "lg:order-1 lg:mr-[-60px]" : "lg:ml-[-60px]"
-                } z-10`}
+                className={`z-10 bg-[var(--brand-blue)] px-6 py-8 text-left text-white shadow-[0_4px_20px_rgba(0,0,0,0.15)] md:absolute md:top-1/2 md:w-1/2 md:-translate-y-1/2 md:px-5 md:py-5 ${
+                  reversed ? "md:left-[-25%]" : "md:right-[-25%]"
+                }`}
               >
-                <div className="mb-5 flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-[2rem] font-light text-[var(--ink)]">{project.title}</h3>
-                    <div className="mt-4 text-[1.05rem] leading-7 text-[var(--muted)]">
-                      <p>{project.description}</p>
-                    </div>
-                  </div>
-                  <div className="relative h-[72px] w-[72px] shrink-0 rounded-lg bg-white p-2 shadow-[0_2px_12px_rgba(30,28,89,0.2)]">
-                    <Image
-                      src={project.crestImage}
-                      alt={project.title}
-                      fill
-                      className="object-contain p-2"
-                      sizes="72px"
-                    />
+                <div className="flex w-full flex-col gap-4">
+                  <h3 className="text-[2rem] font-light text-white">{project.title}</h3>
+                  <div className="text-[1.1rem] leading-[1.4] text-white">
+                    <p>{project.description}</p>
                   </div>
                 </div>
 
                 <button
                   type="button"
                   onClick={() => setOpenSlug(isOpen ? null : project.slug)}
-                  className="text-sm uppercase tracking-[0.12em] text-[var(--brand-blue)] transition hover:text-[var(--brand-blue-dark)]"
+                  className="mt-6 border-b border-white/50 pb-0.5 text-sm font-light uppercase tracking-[0.12em] text-white transition hover:border-white"
                 >
                   {isOpen ? "ZATVORIŤ ←" : "VIAC →"}
                 </button>
