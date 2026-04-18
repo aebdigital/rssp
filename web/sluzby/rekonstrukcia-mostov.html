@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Rekonštrukcia mostov | Stavebný sociálny podnik s.r.o.</title>
+    
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="services.css">
+</head>
+<body>
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="service-hero-bg">
+            <img src="../sources/LONTOV/VYBRATE/lontov-5.jpg" alt="Service hero background">
+        </div>
+        <div class="service-hero-content">
+            <div class="container">
+                <h1 class="service-hero-title">Rekonštrukcia mostov</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Content Section -->
+    <section class="service-page-content">
+        <div class="container">
+            <div class="service-layout">
+                <!-- Left Side - Info and Gallery -->
+                <div class="service-info">
+                    <h2 class="service-title">Rekonštrukcia mostov</h2>
+                    <div class="service-description">
+                        <p>Špecializujeme sa na komplexnú rekonštrukciu mostov a mostných objektov. Naše služby zahŕňajú diagnostiku, návrh sanačných opatrení a realizáciu rekonštrukčných prác s dôrazom na bezpečnosť a kvalitu.</p>
+                        <p>Realizujeme opravy mostnej konštrukcie, výmenu mostovky, rekonštrukciu podporných konštrukcií a úpravu spevnených plôch v okolí mostných objektov.</p>
+                    </div>
+                    
+                    <div class="service-gallery-left">
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/spevnenie mostov/0ea5e1d4-2725-4cbe-9ca9-6e901f2bbb1e.jpg" alt="Rekonštrukcia mostov - mostovka">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/spevnenie mostov/4d28cdbc-c1e2-439a-b306-8a9cfd73431a.jpg" alt="Rekonštrukcia mostov - podpora">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/spevnenie mostov/4daf3c45-7054-4862-a898-dabfc90fce5e.jpg" alt="Rekonštrukcia mostov - dokončenie">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/spevnenie mostov/e22071c1-2d4b-46ba-bf7b-ea5c310ecad0.jpg" alt="Rekonštrukcia mostov - finalizácia">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Main Image -->
+                <div class="service-main-image">
+                    <img src="../sources/spevnenie mostov/88ecade7-659d-4e4a-875a-4fa238fa9c3b.jpg" alt="Rekonštrukcia mostov - hlavný obraz">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-nav lightbox-prev" onclick="previousImage()">&#8249;</button>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <button class="lightbox-nav lightbox-next" onclick="nextImage()">&#8250;</button>
+        </div>
+    </div>
+
+    <script src="../script-v2.js"></script>
+    <script src="lightbox.js"></script>
+    
+</body>
+</html>

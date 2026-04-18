@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Služby - Stavebné práce, zateplenie, terénne úpravy | Stavebný sociálny podnik s.r.o.</title>
+    
+    <!-- Meta Description -->
+    <meta name="description" content="Komplexné stavebné služby: stavebná činnosť, zatepľovanie budov, terénne úpravy, vodozádržné práce, klampiarske práce a elektroinstalačné práce.">
+    <meta name="keywords" content="stavebné služby, zatepľovanie budov, terénne úpravy, vodozádržné práce, klampiarske práce, elektroinstalačné práce, stavebná činnosť">
+    <meta name="author" content="Stavebný sociálny podnik s.r.o.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Služby - Stavebné práce, zateplenie, terénne úpravy">
+    <meta property="og:description" content="Komplexné stavebné služby: stavebná činnosť, zatepľovanie budov, terénne úpravy, vodozádržné práce, klampiarske práce a elektroinstalačné práce.">
+    <meta property="og:image" content="https://www.rssp.sk/sources/BREZNO/VYBRATE/brezno-7.jpg">
+    <meta property="og:url" content="https://www.rssp.sk/sluzby">
+    <meta property="og:site_name" content="Stavebný sociálny podnik s.r.o.">
+    <meta property="og:locale" content="sk_SK">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Služby - Stavebné práce, zateplenie, terénne úpravy">
+    <meta name="twitter:description" content="Komplexné stavebné služby: stavebná činnosť, zatepľovanie budov, terénne úpravy a vodozádržné práce.">
+    <meta name="twitter:image" content="https://www.rssp.sk/sources/BREZNO/VYBRATE/brezno-7.jpg">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.rssp.sk/sluzby">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            animation: lightboxZoom 0.3s ease;
+        }
+
+        @keyframes lightboxZoom {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .lightbox-image {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            cursor: pointer !important;
+        }
+
+        .lightbox-close {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 10001;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .lightbox-nav {
+            position: fixed !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            background: rgba(0, 0, 0, 0.6) !important;
+            border: 2px solid rgba(255, 255, 255, 0.3) !important;
+            color: white !important;
+            font-size: 24px !important;
+            cursor: pointer !important;
+            width: 60px !important;
+            height: 60px !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            z-index: 10002 !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(0, 0, 0, 0.8) !important;
+            border: 2px solid rgba(255, 255, 255, 0.6) !important;
+            transform: translateY(-50%) scale(1.1) !important;
+        }
+
+        .lightbox-prev {
+            left: 20px !important;
+        }
+
+        .lightbox-next {
+            right: 20px !important;
+        }
+
+        /* 3x1 Photo grid for 3 photos */
+        .photo-grid-3x1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .photo-grid-3x1 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .lightbox-nav {
+                display: none;
+            }
+            
+            .lightbox-close {
+                top: 20px;
+                right: 20px;
+            }
+            
+            .lightbox-nav {
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 20px !important;
+            }
+        }
+    </style>
+</head>
+<body><!-- Services Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-bg">
+            <img src="sources/LONTOV/VYBRATE/lontov-5.jpg" alt="Stavebný sociálny podnik služby">
+        </div>
+        <div class="contact-hero-content">
+            <div class="container">
+                <h1 class="contact-hero-title">Naše služby</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Content Section -->
+    <section class="services-content">
+        <div class="container">
+            <div class="home-services-grid">
+                <div class="home-service-item">
+                    <div class="service-number">01.</div>
+                    <div class="service-icon">
+                        <img src="sources/ikonky/stavebna_cinnost.png" alt="Stavebná činnosť icon" width="40" height="40">
+                    </div>
+                    <h3>Stavebná činnosť</h3>
+                    <p>Komplexné stavebné práce, rekonštrukcie a nové stavby s dôrazom na kvalitu a spokojnosť zákazníkov.</p>
+                </div>
+                
+                <div class="home-service-item">
+                    <div class="service-number">02.</div>
+                    <div class="service-icon">
+                        <img src="sources/ikonky/Zateplovanie.png" alt="Zatepľovanie budov icon" width="40" height="40">
+                    </div>
+                    <h3>Zatepľovanie budov</h3>
+                    <p>Energetické zatepľovanie budov a izolácia fasád pre úsporu nákladov na vykurovanie.</p>
+                </div>
+                
+                <div class="home-service-item">
+                    <div class="service-number">03.</div>
+                    <div class="service-icon">
+                        <img src="sources/ikonky/vodozadrzne.png" alt="Vodozádržné práce icon" width="40" height="40">
+                    </div>
+                    <h3>Vodozádržné práce</h3>
+                    <p>Vodozádržné opatrenia a regulácia povrchových vôd pre ochranu pred záplavami.</p>
+                </div>
+                
+                <div class="home-service-item">
+                    <div class="service-number">04.</div>
+                    <div class="service-icon">
+                        <img src="sources/ikonky/terenne upravy.png" alt="Terénne úpravy icon" width="40" height="40">
+                    </div>
+                    <h3>Terénne úpravy</h3>
+                    <p>Komplexné terénne úpravy a výkopové práce pre kvalitné pripravenie pozemkov.</p>
+                </div>
+                
+                <div class="home-service-item">
+                    <div class="service-number">05.</div>
+                    <div class="service-icon">
+                        <img src="sources/ikonky/rekonstrukcia_mostov.png" alt="Rekonštrukcia mostov icon" width="40" height="40">
+                    </div>
+                    <h3>Rekonštrukcia mostov</h3>
+                    <p>Komplexné rekonštrukcie mostov s modernými materiálmi a technológiami.</p>
+                </div>
+                
+                <div class="home-service-item">
+                    <div class="service-number">06.</div>
+                    <div class="service-icon">
+                        <img src="sources/ikonky/spevnenie.png" alt="Spevnenie plôch icon" width="40" height="40">
+                    </div>
+                    <h3>Spevnenie plôch</h3>
+                    <p>Spevnenie plôch, betónovanie a asfaltovanie pre parkoviská, cesty a priemyselné areály.</p>
+                </div>
+                
+                <div class="home-service-item">
+                    <div class="service-number">07.</div>
+                    <div class="service-icon">
+                        <img src="sources/ikonky/Vykopove_prace.png" alt="Výkopové práce icon" width="40" height="40">
+                    </div>
+                    <h3>Výkopové práce</h3>
+                    <p>Profesionálne výkopové práce pre inžinierske siete, základy stavieb a terénne úpravy.</p>
+                </div>
+                
+                <div class="home-service-item">
+                    <div class="service-number">08.</div>
+                    <div class="service-icon">
+                        <img src="sources/ikonky/klampiarske.png" alt="Klampiarske práce icon" width="40" height="40">
+                    </div>
+                    <h3>Klampiarske práce</h3>
+                    <p>Klampiarske a pokrývačské práce, oplechovanie striech a okapové systémy.</p>
+                </div>
+                
+                <div class="home-service-item">
+                    <div class="service-number">09.</div>
+                    <div class="service-icon">
+                        <img src="sources/ikonky/vodarenske_kurenarske_prace.png" alt="Vodárenske a kurenárske práce icon" width="40" height="40">
+                    </div>
+                    <h3>Vodárenske a kurenárske práce</h3>
+                    <p>Inštalácia vykurovacích systémov, vodárenskych inštalácií a súvisiace technické práce.</p>
+                </div>
+                
+                <div class="home-service-item">
+                    <div class="service-number">10.</div>
+                    <div class="service-icon">
+                        <img src="sources/ikonky/elektroinstalacne.png" alt="Elektroinštalačné práce icon" width="40" height="40">
+                    </div>
+                    <h3>Elektroinštalačné práce</h3>
+                    <p>Komplexné elektroinštalačné práce, rozvody silnoprúdu a slaboproudu, revízie a servis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>Používame cookies na zlepšenie vašej skúsenosti na našom webe. Pokračovaním v prehliadaní súhlasíte s ich používaním.</p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="btn-accept">Súhlasím</button>
+                <button id="decline-cookies" class="btn-decline">Odmietnuť</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-nav lightbox-prev" onclick="previousImage()">&#8249;</button>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <button class="lightbox-nav lightbox-next" onclick="nextImage()">&#8250;</button>
+        </div>
+    </div>
+
+    <script src="script-v2.js"></script>
+    <script>
+        // Services navigation functionality for grid
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceLinks = document.querySelectorAll('.home-service-item');
+            const serviceDetails = document.querySelectorAll('.service-detail');
+
+            function showService(serviceId) {
+                // Remove active class from all details
+                serviceDetails.forEach(d => d.classList.remove('active'));
+                
+                // Show corresponding service detail
+                const targetDetail = document.getElementById(serviceId);
+                if (targetDetail) {
+                    targetDetail.classList.add('active');
+                    
+                    // Scroll to the service-detail container with minimal navbar offset
+                    const containerTop = targetDetail.offsetTop;
+                    // Minimal offset to keep navbar visible but show full service-detail
+                    const isMobile = window.innerWidth <= 768;
+                    const navbarHeight = isMobile ? 90 : 170; // Increased desktop offset to show h2 properly
+                    const targetScrollPosition = containerTop - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetScrollPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
+            // Check for hash in URL on page load
+            if (window.location.hash) {
+                const serviceId = window.location.hash.substring(1); // Remove the # symbol
+                // Add a small delay to ensure page is fully loaded
+                setTimeout(() => {
+                    showService(serviceId);
+                }, 100);
+            }
+
+            serviceLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const serviceId = this.getAttribute('href').substring(1); // Remove the # symbol
+                    showService(serviceId);
+                    
+                    // Update URL hash
+                    window.history.pushState(null, null, `#${serviceId}`);
+                });
+            });
+
+            // Handle browser back/forward buttons
+            window.addEventListener('hashchange', function() {
+                if (window.location.hash) {
+                    const serviceId = window.location.hash.substring(1);
+                    showService(serviceId);
+                }
+            });
+        });
+
+        // Lightbox functionality
+        let currentImageIndex = 0;
+        let currentImages = [];
+
+        function openLightbox(imgElement) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            
+            // Get all visible images in service photo galleries
+            const visibleImages = document.querySelectorAll('.service-photo-gallery img');
+            currentImages = Array.from(visibleImages);
+            currentImageIndex = currentImages.indexOf(imgElement);
+            
+            // Set lightbox content
+            lightboxImage.src = imgElement.src;
+            lightboxImage.alt = imgElement.alt;
+            
+            // Show lightbox
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Add click event to image for next slide
+            lightboxImage.onclick = function() {
+                nextImage();
+            };
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextImage() {
+            if (currentImageIndex < currentImages.length - 1) {
+                currentImageIndex++;
+            } else {
+                currentImageIndex = 0; // Wrap to first image
+            }
+            updateLightboxImage();
+        }
+
+        function previousImage() {
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+            } else {
+                currentImageIndex = currentImages.length - 1; // Wrap to last image
+            }
+            updateLightboxImage();
+        }
+
+        function updateLightboxImage() {
+            const lightboxImage = document.getElementById('lightbox-image');
+            
+            const currentImg = currentImages[currentImageIndex];
+            lightboxImage.src = currentImg.src;
+            lightboxImage.alt = currentImg.alt;
+            
+            // Add click event to image for next slide
+            lightboxImage.onclick = function() {
+                nextImage();
+            };
+        }
+
+        // Close lightbox on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowRight') {
+                nextImage();
+            } else if (e.key === 'ArrowLeft') {
+                previousImage();
+            }
+        });
+
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

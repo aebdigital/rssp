@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Stavebná činnosť | Stavebný sociálny podnik s.r.o.</title>
+    
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="services.css">
+</head>
+<body>
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="service-hero-bg">
+            <img src="../sources/LONTOV/VYBRATE/lontov-5.jpg" alt="Service hero background">
+        </div>
+        <div class="service-hero-content">
+            <div class="container">
+                <h1 class="service-hero-title">Stavebná činnosť</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Content Section -->
+    <section class="service-page-content">
+        <div class="container">
+            <div class="service-layout">
+                <!-- Left Side - Info and Gallery -->
+                <div class="service-info">
+                    <h2 class="service-title">Stavebná činnosť</h2>
+                    <div class="service-description">
+                        <p>Poskytujeme komplexné stavebné služby s dôrazom na kvalitu, spoľahlivosť a profesionalitu. Naše skúsenosti zahŕňajú široké spektrum stavebných prác od základov až po dokončovacie práce.</p>
+                        <p>Špecializujeme sa na rekonštrukcie verejných budov, školských zariadení a objektov občianskej vybavenosti. Každý projekt realizujeme s ohľadom na najvyššie štandardy kvality a bezpečnosti práce.</p>
+                    </div>
+                    
+                    <div class="service-gallery-left">
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/BREZNO/VYBRATE/brezno-2.jpg" alt="Stavebná činnosť - rekonštrukcia">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/STIAVNICKE BANE/VYBRATE/stiavnicke-3.jpg" alt="Stavebná činnosť - fasáda">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/BREZNO/VYBRATE/brezno-4.jpg" alt="Stavebná činnosť - interiér">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/STIAVNICKE BANE/VYBRATE/stiavnicke-5.jpg" alt="Stavebná činnosť - dokončenie">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Main Image -->
+                <div class="service-main-image">
+                    <img src="../sources/BREZNO/VYBRATE/brezno-1.jpg" alt="Stavebná činnosť - hlavný obraz">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-nav lightbox-prev" onclick="previousImage()">&#8249;</button>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <button class="lightbox-nav lightbox-next" onclick="nextImage()">&#8250;</button>
+        </div>
+    </div>
+
+    <script src="../script-v2.js"></script>
+    <script src="lightbox.js"></script>
+    
+</body>
+</html>

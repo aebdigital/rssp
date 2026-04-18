@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --surface: #f8f9fa;
+  --surface-strong: #eef2f5;
+  --brand-blue: #0166ab;
+  --brand-blue-dark: #1a3d63;
+  --ink: #1a1a1a;
+  --muted: #666666;
+  --line: rgba(0, 0, 0, 0.08);
+  --navbar-height: 90px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  font-family: var(--font-apercu), sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+body.menu-open,
+body.modal-open {
+  overflow: hidden;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    @apply border-[var(--line)];
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+@layer utilities {
+  .site-container {
+    width: min(95%, 1440px);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .section-outline-title {
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 1;
+    font-weight: 300;
+    color: #000;
+  }
+
+  .section-title-underline::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    margin-top: 20px;
+    background: #265286;
+  }
+
+  .blue-button {
+    background: #0166ab;
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  .blue-button:hover {
+    background: #1a3d63;
+    transform: translateY(-2px);
+  }
+
+  .outline-button {
+    border: 2px solid currentColor;
+    transition: all 0.3s ease;
+  }
+
+  .outline-button:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 82px;
+  }
+
+  .site-container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

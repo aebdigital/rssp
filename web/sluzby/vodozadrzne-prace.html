@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Vodozádržné práce | Stavebný sociálny podnik s.r.o.</title>
+    
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="services.css">
+</head>
+<body>
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="service-hero-bg">
+            <img src="../sources/LONTOV/VYBRATE/lontov-5.jpg" alt="Service hero background">
+        </div>
+        <div class="service-hero-content">
+            <div class="container">
+                <h1 class="service-hero-title">Vodozádržné práce</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Content Section -->
+    <section class="service-page-content">
+        <div class="container">
+            <div class="service-layout">
+                <!-- Left Side - Info and Gallery -->
+                <div class="service-info">
+                    <h2 class="service-title">Vodozádržné práce</h2>
+                    <div class="service-description">
+                        <p>Realizujeme komplexné vodozádržné opatrenia a systémy na reguláciu povrchových vôd. Naše riešenia prispievajú k ochrane pred záplavami a efektívnemu hospodáreniu s dažďovou vodou.</p>
+                        <p>Špecializujeme sa na výstavbu retenčných nádrží, drenážnych systémov a vodozádržných múrov. Každý projekt navrhujeme s ohľadom na lokálne podmienky a environmentálne požiadavky.</p>
+                    </div>
+                    
+                    <div class="service-gallery-left">
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/vodozadrzne/IMG20230802131820.jpg" alt="Vodozádržné práce - terénne úpravy">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/vodozadrzne/df976637039f6dd29f7865521bc11a89.jpg" alt="Vodozádržné práce - systém">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/vodozadrzne/screenshot20191108-201911070826280-20191028092506-jpg-obrzok-jpeg-800x450-bodov_z3wcs_1573249951.png" alt="Vodozádržné práce - projekt">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/vodozadrzne/vodozadrzne-opatrenia.jpg" alt="Vodozádržné práce - opatrenia">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Main Image -->
+                <div class="service-main-image">
+                    <img src="../sources/vodozadrzne/vodozadrzne-opatrenie-2024.jpg" alt="Vodozádržné práce - hlavný obraz">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-nav lightbox-prev" onclick="previousImage()">&#8249;</button>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <button class="lightbox-nav lightbox-next" onclick="nextImage()">&#8250;</button>
+        </div>
+    </div>
+
+    <script src="../script-v2.js"></script>
+    <script src="lightbox.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Výkopové práce | Stavebný sociálny podnik s.r.o.</title>
+    
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="services.css">
+    
+</head>
+<body>
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="service-hero-bg">
+            <img src="../sources/LONTOV/VYBRATE/lontov-5.jpg" alt="Service hero background">
+        </div>
+        <div class="service-hero-content">
+            <div class="container">
+                <h1 class="service-hero-title">Výkopové práce</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Content Section -->
+    <section class="service-page-content">
+        <div class="container">
+            <div class="service-layout">
+                <!-- Left Side - Info and Gallery -->
+                <div class="service-info">
+                    <h2 class="service-title">Výkopové práce</h2>
+                    <div class="service-description">
+                        <p>Realizujeme komplexné výkopové práce pre rôzne typy stavieb a infraštruktúrnych projektov. Naše služby zahŕňajú výkopy základov, inžinierskych sietí a terénne úpravy s použitím modernej techniky.</p>
+                        <p>Disponujeme skúseným tímom a technikou pre presné výkopové práce, zabezpečujeme bezpečnosť práce a dodržiavame všetky technické normy a predpisy.</p>
+                    </div>
+                    
+                    <div class="service-gallery-left">
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/vykopove/Photo_blog_670x350_px_-_2023-06-15T125004_478.webp" alt="Výkopové práce - bagrovanie">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/vykopove/rucne-vykopove-prace-bratislava-zemne-vyskove-p5tan0337nh121967h8sggqgsq8e2prduaft4dl5rk.jpg" alt="Výkopové práce - inžinierske siete">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/vykopove/istockphoto-505896768-612x612.jpg" alt="Výkopové práce - hlboký výkop">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/vykopove/mood56-excavationsafetyforconstruction.webp" alt="Výkopové práce - bezpečnosť">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Main Image -->
+                <div class="service-main-image">
+                    <img src="../sources/vykopove/Utilitiess.jpg" alt="Výkopové práce - hlavný obraz">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-nav lightbox-prev" onclick="previousImage()">&#8249;</button>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <button class="lightbox-nav lightbox-next" onclick="nextImage()">&#8250;</button>
+        </div>
+    </div>
+
+    <script src="../script-v2.js"></script>
+    <script src="lightbox.js"></script>
+   
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Spevnenie plôch | Stavebný sociálny podnik s.r.o.</title>
+    
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="services.css">
+</head>
+<body>
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="service-hero-bg">
+            <img src="../sources/LONTOV/VYBRATE/lontov-5.jpg" alt="Service hero background">
+        </div>
+        <div class="service-hero-content">
+            <div class="container">
+                <h1 class="service-hero-title">Spevnenie plôch</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Content Section -->
+    <section class="service-page-content">
+        <div class="container">
+            <div class="service-layout">
+                <!-- Left Side - Info and Gallery -->
+                <div class="service-info">
+                    <h2 class="service-title">Spevnenie plôch</h2>
+                    <div class="service-description">
+                        <p>Realizujeme kvalitné spevnenie plôch pomocou rôznych materiálov a technológií. Naše služby zahŕňajú asfaltové povrchy, betónové plochy, dlažbu a iné typy spevnených povrchov.</p>
+                        <p>Špecializujeme sa na spevnenie parkovísk, chodníkov, náměstí a prístupových ciest. Každý projekt realizujeme s dôrazom na dlhodobú životnosť a estetické hodnoty.</p>
+                    </div>
+                    
+                    <div class="service-gallery-left">
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/LONTOV/VYBRATE/lontov-6.jpg" alt="Spevnenie plôch - príprava podkladu">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/LONTOV/VYBRATE/lontov-7.jpg" alt="Spevnenie plôch - pokládka">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/BZOVIK/VYBRATE/bzovik-4.jpg" alt="Spevnenie plôch - dokončenie">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/LONTOV/VYBRATE/lontov-8.jpg" alt="Spevnenie plôch - finálny povrch">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Main Image -->
+                <div class="service-main-image">
+                    <img src="../sources/BZOVIK/VYBRATE/bzovik-5.jpg" alt="Spevnenie plôch - hlavný obraz">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-nav lightbox-prev" onclick="previousImage()">&#8249;</button>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <button class="lightbox-nav lightbox-next" onclick="nextImage()">&#8250;</button>
+        </div>
+    </div>
+
+    <script src="../script-v2.js"></script>
+    <script src="lightbox.js"></script>
+    
+</body>
+</html>

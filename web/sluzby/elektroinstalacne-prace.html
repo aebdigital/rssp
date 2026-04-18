@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Elektroinštalačné práce | Stavebný sociálny podnik s.r.o.</title>
+    
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="services.css">
+    
+</head>
+<body>
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="service-hero-bg">
+            <img src="../sources/LONTOV/VYBRATE/lontov-5.jpg" alt="Service hero background">
+        </div>
+        <div class="service-hero-content">
+            <div class="container">
+                <h1 class="service-hero-title">Elektroinštalačné práce</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Content Section -->
+    <section class="service-page-content">
+        <div class="container">
+            <div class="service-layout">
+                <!-- Left Side - Info and Gallery -->
+                <div class="service-info">
+                    <h2 class="service-title">Elektroinštalačné práce</h2>
+                    <div class="service-description">
+                        <p>Poskytujeme komplexné elektroinštalačné služby pre všetky typy budov. Naše služby zahŕňajú montáž elektrorozvodov, osvetlenia, zásuvkových okruhov a bezpečnostných systémov s dôrazom na bezpečnosť a spoľahlivosť.</p>
+                        <p>Všetky elektroinštalačné práce vykonávajú kvalifikovaní elektrikári s príslušnými oprávneniami. Dodržiavame všetky bezpečnostné predpisy a technické normy pre elektroinštalácie.</p>
+                    </div>
+                    
+                    <div class="service-gallery-left">
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/elektroinstalacie/260999.gif" alt="Elektroinštalačné práce - rozvody">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/elektroinstalacie/bigstav_sro_elektroinstalacne_prace_4.webp" alt="Elektroinštalačné práce - osvetlenie">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/elektroinstalacie/elektroinstalacne-prace-clanok.jpg" alt="Elektroinštalačné práce - zásuvky">
+                        </div>
+                        <div class="service-gallery-item" onclick="openLightbox(this.querySelector('img'))">
+                            <img src="../sources/elektroinstalacie/elektroinstalacne-prace-kvalita-dobra-cena.jpg" alt="Elektroinštalačné práce - rozvodnica">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Main Image -->
+                <div class="service-main-image">
+                    <img src="../sources/elektroinstalacie/elektroinstalacne_prace.webp" alt="Elektroinštalačné práce - hlavný obraz">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-nav lightbox-prev" onclick="previousImage()">&#8249;</button>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <button class="lightbox-nav lightbox-next" onclick="nextImage()">&#8250;</button>
+        </div>
+    </div>
+
+    <script src="../script-v2.js"></script>
+    <script src="lightbox.js"></script>
+   
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Certifikáty - Stavebný sociálny podnik s.r.o. | Banská Štiavnica</title>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body><!-- Certificates Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-bg">
+            <img src="sources/SLIEZKY DOM/VYBRATE/sliezky-8.jpg" alt="Certifikáty - kvalita a zodpovednosť">
+        </div>
+        <div class="contact-hero-content">
+            <div class="container">
+                <h1 class="contact-hero-title">Dosiahnuté certifikáty</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Content Section -->
+    <section class="certificates-section">
+        <div class="container">
+            <div class="certificates-grid">
+                <img src="sources/certifikaty/ISO certifikovane _Nova-1.png" alt="ISO 14001 certifikát" class="certificate-image" onclick="openLightbox(0)">
+                <img src="sources/certifikaty/Emas-1.png" alt="EMAS certifikát" class="certificate-image" onclick="openLightbox(1)">
+                <img src="sources/certifikaty/new.png" alt="EMAS certifikát" class="certificate-image" onclick="openLightbox(2)">
+                <img src="sources/certifikaty/ISO 37001-1.png" alt="ISO 37001 certifikát" class="certificate-image" onclick="openLightbox(3)">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="certificateLightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">×</button>
+            <button class="lightbox-nav lightbox-prev" onclick="prevImage()">‹</button>
+            <img id="lightboxImage" src="" alt="Certificate" class="lightbox-image">
+            <button class="lightbox-nav lightbox-next" onclick="nextImage()">›</button>
+        </div>
+    </div>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <script src="script-v2.js"></script>
+    <script>
+        // Certificate data
+        const certificates = [
+            {
+                src: 'sources/certifikaty/ISO certifikovane _Nova-1.png',
+                title: 'ISO 14001 - Environmentálny manažment',
+                alt: 'ISO 14001 certifikát'
+            },
+            {
+                src: 'sources/certifikaty/Emas-1.png',
+                title: 'EMAS - Eco-Management and Audit Scheme',
+                alt: 'EMAS certifikát'
+            },
+            {
+                src: 'sources/certifikaty/new.png',
+                title: 'Certifikát kvality',
+                alt: 'Certifikát kvality'
+            },
+            {
+                src: 'sources/certifikaty/ISO 37001-1.png',
+                title: 'ISO 37001 - Systém manažmentu pre boj proti korúpcii',
+                alt: 'ISO 37001 certifikát'
+            }
+        ];
+
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const lightbox = document.getElementById('certificateLightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxTitle = document.getElementById('lightboxTitle');
+            
+            lightbox.classList.add('active');
+            lightboxImage.src = certificates[index].src;
+            lightboxImage.alt = certificates[index].alt;
+            lightboxTitle.textContent = certificates[index].title;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('certificateLightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % certificates.length;
+            updateLightboxContent();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + certificates.length) % certificates.length;
+            updateLightboxContent();
+        }
+
+        function updateLightboxContent() {
+            const lightboxImage = document.getElementById('lightboxImage');
+            
+            lightboxImage.src = certificates[currentImageIndex].src;
+            lightboxImage.alt = certificates[currentImageIndex].alt;
+        }
+
+        // Close lightbox when clicking outside the image
+        document.getElementById('certificateLightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox with Escape key and navigate with arrows
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('certificateLightbox').classList.contains('active')) {
+                switch(e.key) {
+                    case 'Escape':
+                        closeLightbox();
+                        break;
+                    case 'ArrowLeft':
+                        prevImage();
+                        break;
+                    case 'ArrowRight':
+                        nextImage();
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
