@@ -2,11 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { company, socialEnterprisePdf } from "@/lib/site-data";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "O nás",
   description: company.shortDescription,
-};
+  path: "/about",
+  image: "/sources/O-nas.jpg",
+});
 
 export default function AboutPage() {
   return (

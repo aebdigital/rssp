@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { services } from "@/lib/site-data";
 
 const serviceLinks = services.map((service) => ({
@@ -22,8 +22,11 @@ function isActive(pathname: string, href: string) {
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const headerRef = useRef<HTMLElement | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileSustainabilityOpen, setMobileSustainabilityOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -43,7 +46,22 @@ export function SiteHeader() {
 
   useEffect(() => {
     setMenuOpen(false);
+    setMobileServicesOpen(false);
+    setMobileSustainabilityOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    const updateNavbarHeight = () => {
+      if (headerRef.current) {
+        document.documentElement.style.setProperty("--navbar-height", `${headerRef.current.offsetHeight}px`);
+      }
+    };
+
+    updateNavbarHeight();
+    window.addEventListener("resize", updateNavbarHeight);
+
+    return () => window.removeEventListener("resize", updateNavbarHeight);
+  }, [menuOpen, scrolled, pathname]);
 
   const solid = scrolled || menuOpen;
   const linkClass = solid ? "text-[var(--brand-blue)]" : "text-white";
@@ -60,6 +78,7 @@ export function SiteHeader() {
       </a>
 
       <header
+        ref={headerRef}
         className={`fixed inset-x-0 top-0 z-[1000] transition-all duration-300 ${
           solid ? "bg-white/95 shadow-[0_2px_20px_rgba(0,0,0,0.18)] backdrop-blur-md" : "bg-transparent"
         }`}
@@ -186,54 +205,102 @@ export function SiteHeader() {
             <span className={`h-0.5 w-6 transition-all ${solid ? "bg-[var(--brand-blue)]" : "bg-white"}`} />
           </button>
         </div>
-
-        <div
-          className={`overflow-hidden bg-white/95 backdrop-blur-md transition-all duration-300 lg:hidden ${
-            menuOpen ? "max-h-[calc(100vh-var(--navbar-height))] border-t border-black/10" : "max-h-0"
-          }`}
-        >
-          <div className="site-container h-[calc(100vh-var(--navbar-height))] overflow-y-auto py-6">
-            <div className="space-y-5">
-              <Link href="/" className="block text-xl text-[var(--brand-blue)]">
-                Domov
-              </Link>
-              <Link href="/about" className="block text-xl text-[var(--brand-blue)]">
-                O nás
-              </Link>
-              <div className="space-y-3">
-                <Link href="/sluzby" className="block text-xl text-[var(--brand-blue)]">
-                  Služby ▼
-                </Link>
-                <div className="space-y-2 pl-4">
-                  {serviceLinks.map((item) => (
-                    <Link key={item.href} href={item.href} className="block text-sm text-[var(--brand-blue)]">
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-              <Link href="/galeria" className="block text-xl text-[var(--brand-blue)]">
-                Galéria
-              </Link>
-              <div className="space-y-3">
-                <Link href="/certifikaty" className="block text-xl text-[var(--brand-blue)]">
-                  Udržateľnosť ▼
-                </Link>
-                <div className="space-y-2 pl-4">
-                  {sustainabilityLinks.map((item) => (
-                    <Link key={item.href} href={item.href} className="block text-sm text-[var(--brand-blue)]">
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-              <Link href="/kontakt" className="block text-xl text-[var(--brand-blue)]">
-                Kontakt
-              </Link>
-            </div>
-          </div>
-        </div>
       </header>
+
+      <div
+        className={`fixed left-0 right-0 top-[var(--navbar-height)] z-[999] h-[calc(100vh-var(--navbar-height))] bg-white/95 backdrop-blur-md transition-transform duration-300 lg:hidden ${
+          menuOpen ? "translate-x-0" : "-translate-x-full pointer-events-none"
+        }`}
+      >
+        <div className="h-full overflow-y-auto px-5 py-5">
+          <nav aria-label="Mobilná navigácia">
+            <ul className="flex flex-col">
+              <li className="border-b border-[rgba(30,28,89,0.1)]">
+                <Link href="/" className="block py-4 text-[1.2rem] uppercase tracking-[0.5px] text-[var(--brand-blue)]">
+                  Domov
+                </Link>
+              </li>
+              <li className="border-b border-[rgba(30,28,89,0.1)]">
+                <Link href="/about" className="block py-4 text-[1.2rem] uppercase tracking-[0.5px] text-[var(--brand-blue)]">
+                  O nás
+                </Link>
+              </li>
+              <li className="border-b border-[rgba(30,28,89,0.1)]">
+                <div className="flex items-center justify-between">
+                  <Link href="/sluzby" className="block flex-1 py-4 text-[1.2rem] uppercase tracking-[0.5px] text-[var(--brand-blue)]">
+                    Služby
+                  </Link>
+                  <button
+                    type="button"
+                    aria-label="Rozbaliť služby"
+                    onClick={() => setMobileServicesOpen((value) => !value)}
+                    className="px-5 text-[2rem] font-light leading-none text-[var(--brand-blue)]"
+                  >
+                    {mobileServicesOpen ? "−" : "+"}
+                  </button>
+                </div>
+                <div className={`overflow-hidden transition-[max-height] duration-300 ${mobileServicesOpen ? "max-h-[800px]" : "max-h-0"}`}>
+                  <ul>
+                    {serviceLinks.map((item, index) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          className={`block py-[15px] pl-10 pr-5 text-[1.1rem] text-[var(--brand-blue)] ${
+                            index === serviceLinks.length - 1 ? "" : "border-b border-[rgba(30,28,89,0.1)]"
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+              <li className="border-b border-[rgba(30,28,89,0.1)]">
+                <Link href="/galeria" className="block py-4 text-[1.2rem] uppercase tracking-[0.5px] text-[var(--brand-blue)]">
+                  Galéria
+                </Link>
+              </li>
+              <li className="border-b border-[rgba(30,28,89,0.1)]">
+                <div className="flex items-center justify-between">
+                  <Link href="/certifikaty" className="block flex-1 py-4 text-[1.2rem] uppercase tracking-[0.5px] text-[var(--brand-blue)]">
+                    Udržateľnosť
+                  </Link>
+                  <button
+                    type="button"
+                    aria-label="Rozbaliť udržateľnosť"
+                    onClick={() => setMobileSustainabilityOpen((value) => !value)}
+                    className="px-5 text-[2rem] font-light leading-none text-[var(--brand-blue)]"
+                  >
+                    {mobileSustainabilityOpen ? "−" : "+"}
+                  </button>
+                </div>
+                <div className={`overflow-hidden transition-[max-height] duration-300 ${mobileSustainabilityOpen ? "max-h-[260px]" : "max-h-0"}`}>
+                  <ul>
+                    {sustainabilityLinks.map((item, index) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          className={`block py-[15px] pl-10 pr-5 text-[1.1rem] text-[var(--brand-blue)] ${
+                            index === sustainabilityLinks.length - 1 ? "" : "border-b border-[rgba(30,28,89,0.1)]"
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+              <li className="border-b border-[rgba(30,28,89,0.1)]">
+                <Link href="/kontakt" className="block py-4 text-[1.2rem] uppercase tracking-[0.5px] text-[var(--brand-blue)]">
+                  Kontakt
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </>
   );
 }

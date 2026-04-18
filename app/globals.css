@@ -61,7 +61,7 @@ body.modal-open {
 
 @layer utilities {
   .site-container {
-    width: min(95%, 1440px);
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;

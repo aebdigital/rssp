@@ -1,10 +1,13 @@
 import { PageHero } from "@/components/page-hero";
 import { ProjectStackGallery } from "@/components/project-stack-gallery";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Galéria",
-  description: "Prehľad zrealizovaných projektov a fotogalérií RSSP.",
-};
+  description: "Galéria zrealizovaných projektov, rekonštrukcií a stavebných prác spoločnosti RSSP.",
+  path: "/galeria",
+  image: "/sources/STIAVNICKE BANE/VYBRATE/stiavnicke-1.jpg",
+});
 
 export default function GalleryPage() {
   return (

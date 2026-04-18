@@ -2,11 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { environmentDeclarationPdf } from "@/lib/site-data";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Životné prostredie",
-  description: "Environmentálny prístup a udržateľné princípy RSSP.",
-};
+  description: "Environmentálny prístup, ISO 14001, EMAS a udržateľné princípy spoločnosti RSSP.",
+  path: "/zivotne-prostredie",
+  image: "/sources/Zivotne prostredie.jpg",
+});
 
 export default function EnvironmentPage() {
   return (

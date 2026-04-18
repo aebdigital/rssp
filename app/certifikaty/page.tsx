@@ -1,11 +1,14 @@
 import { LightboxGallery } from "@/components/lightbox-gallery";
 import { PageHero } from "@/components/page-hero";
 import { certificates } from "@/lib/site-data";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Certifikáty",
-  description: "Prehľad certifikátov a dokumentov spoločnosti RSSP.",
-};
+  description: "Prehľad certifikátov, registrácií a dokumentov spoločnosti RSSP.",
+  path: "/certifikaty",
+  image: certificates[0]?.image ?? "/sources/SLIEZKY DOM/VYBRATE/sliezky-8.jpg",
+});
 
 export default function CertificatesPage() {
   return (

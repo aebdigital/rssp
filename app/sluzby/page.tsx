@@ -2,11 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { services } from "@/lib/site-data";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Služby",
-  description: "Prehľad stavebných a technických služieb RSSP.",
-};
+  description: "Prehľad stavebných, technických a realizačných služieb spoločnosti RSSP.",
+  path: "/sluzby",
+  image: "/sources/LONTOV/VYBRATE/lontov-5.jpg",
+});
 
 export default function ServicesPage() {
   return (

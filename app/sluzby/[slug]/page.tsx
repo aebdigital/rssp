@@ -1,8 +1,10 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LightboxGallery } from "@/components/lightbox-gallery";
 import { PageHero } from "@/components/page-hero";
 import { services } from "@/lib/site-data";
+import { buildMetadata } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{
@@ -14,7 +16,7 @@ export async function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const service = services.find((item) => item.slug === slug);
 
@@ -22,10 +24,12 @@ export async function generateMetadata({ params }: PageProps) {
     return {};
   }
 
-  return {
+  return buildMetadata({
     title: service.title,
     description: service.summary,
-  };
+    path: `/sluzby/${service.slug}`,
+    image: service.coverImage,
+  });
 }
 
 export default async function ServiceDetailPage({ params }: PageProps) {

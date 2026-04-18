@@ -2,10 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { HomeHero } from "@/components/home-hero";
 import { featuredProjectSlugs, featuredServiceSlugs, projects, services } from "@/lib/site-data";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Domov",
-};
+  description:
+    "Stavebný sociálny podnik z Banskej Štiavnice ponúka stavebné práce, zatepľovanie, terénne úpravy a vodozádržné práce. Vyše 100 realizovaných projektov.",
+  path: "/",
+  image: "/sources/SLIEZKY DOM/VYBRATE/sliezky-8.jpg",
+});
 
 export default function HomePage() {
   const featuredServices = services.filter((service) => featuredServiceSlugs.includes(service.slug));

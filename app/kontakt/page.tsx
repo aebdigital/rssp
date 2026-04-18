@@ -1,10 +1,19 @@
 import { PageHero } from "@/components/page-hero";
 import { company } from "@/lib/site-data";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Kontakt",
-  description: "Kontaktné a fakturačné údaje spoločnosti RSSP.",
-};
+  description: "Kontaktné a fakturačné údaje spoločnosti RSSP v Banskej Štiavnici vrátane mapy a spojenia.",
+  path: "/kontakt",
+  image: "/sources/NITRA/VYBRATE/nitra-2.jpg",
+});
+
+const mapsEmbedUrl =
+  "https://www.google.com/maps?q=Stavebn%C3%BD%20soci%C3%A1lny%20podnik%20s.r.o.,%20Eleny%20Mar%C3%B3thy%20%C5%A0olt%C3%A9sovej%205397/3,%20969%2001%20Bansk%C3%A1%20%C5%A0tiavnica&z=17&output=embed";
+
+const mapsProfileUrl =
+  "https://www.google.com/maps/place//data=!4m2!3m1!1s0x471533ebd888ed97:0xc57788d4a06d21c1?sa=X&ved=1t:8290&ictx=111";
 
 export default function ContactPage() {
   return (
@@ -79,14 +88,23 @@ export default function ContactPage() {
       </section>
 
       <section className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen">
-        <div className="h-[450px] w-full">
+        <div className="relative h-[450px] w-full">
           <iframe
             title="Mapa umiestnenia Stavebný sociálny podnik s.r.o."
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2658.8!2d18.8944!3d48.4610!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zNDjCsDI3JzM5LjYiTiAxOMKwNTMnMzkuOCJF!5e0!3m2!1ssk!2ssk!4v1640995200000!5m2!1ssk!2ssk"
+            src={mapsEmbedUrl}
             className="h-full w-full border-0"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
           />
+          <a
+            href={mapsProfileUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="absolute bottom-5 right-5 bg-white px-5 py-3 text-sm uppercase tracking-[0.08em] text-[var(--brand-blue)] shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition hover:-translate-y-1"
+          >
+            Otvoriť profil na mapách
+          </a>
         </div>
       </section>
     </>
