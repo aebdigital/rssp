@@ -109,9 +109,9 @@ export function SiteHeader() {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/o-nas"
                   className={`relative text-base uppercase tracking-[0.5px] ${linkClass} ${
-                    isActive(pathname, "/about") ? "after:w-full" : "after:w-0"
+                    isActive(pathname, "/o-nas") ? "after:w-full" : "after:w-0"
                   } after:absolute after:bottom-[-3px] after:left-0 after:h-0.5 after:bg-current after:transition-all hover:after:w-full`}
                 >
                   O nás
@@ -221,7 +221,7 @@ export function SiteHeader() {
                 </Link>
               </li>
               <li className="border-b border-[rgba(30,28,89,0.1)]">
-                <Link href="/about" className="block py-4 text-[1.2rem] uppercase tracking-[0.5px] text-[var(--brand-blue)]">
+                <Link href="/o-nas" className="block py-4 text-[1.2rem] uppercase tracking-[0.5px] text-[var(--brand-blue)]">
                   O nás
                 </Link>
               </li>

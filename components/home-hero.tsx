@@ -9,6 +9,8 @@ export function HomeHero() {
   const [imageIndex, setImageIndex] = useState(0);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
 
+  const [scrollY, setScrollY] = useState(0);
+
   useEffect(() => {
     const imageTimer = window.setInterval(() => {
       setImageIndex((value) => (value + 1) % heroImages.length);
@@ -17,9 +19,15 @@ export function HomeHero() {
       setTestimonialIndex((value) => (value + 1) % testimonials.length);
     }, 6000);
 
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => {
       window.clearInterval(imageTimer);
       window.clearInterval(testimonialTimer);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -32,6 +40,9 @@ export function HomeHero() {
             className={`absolute inset-0 transition-opacity duration-1000 ${
               imageIndex === index ? "opacity-100" : "opacity-0"
             }`}
+            style={{ 
+              transform: `translateY(${scrollY * 0.3}px) scale(1.1)`,
+            }}
           >
             <Image
               src={image}

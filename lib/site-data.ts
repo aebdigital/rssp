@@ -35,7 +35,7 @@ export type Certificate = {
 export const navigation = {
   main: [
     { href: "/", label: "Domov" },
-    { href: "/about", label: "O nás" },
+    { href: "/o-nas", label: "O nás" },
     { href: "/sluzby", label: "Služby" },
     { href: "/galeria", label: "Galéria" },
     { href: "/certifikaty", label: "Certifikáty" },

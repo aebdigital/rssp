@@ -21,7 +21,7 @@ export default function ContactPage() {
       <PageHero title="Kontakt" image="/sources/NITRA/VYBRATE/nitra-2.jpg" />
 
       <section className="bg-[#f8f9fa] py-20">
-        <div className="site-container">
+        <div className="site-container max-w-5xl">
           <div className="grid gap-[60px] lg:grid-cols-2">
             <div>
               <h3 className="mb-5 text-2xl font-light text-[rgb(30,28,89)]">Office</h3>
@@ -52,7 +52,7 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-white py-20">
-        <div className="site-container">
+        <div className="site-container max-w-5xl">
           <h2 className="section-title-underline mb-[60px] text-[clamp(2rem,4vw,2.5rem)] font-light text-[#1a1a1a]">
             Fakturačné údaje
           </h2>

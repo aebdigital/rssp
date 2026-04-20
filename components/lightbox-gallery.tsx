@@ -8,6 +8,8 @@ type LightboxGalleryProps = {
   title: string;
   columns?: 1 | 2 | 3 | 4;
   imageHeight?: number;
+  aspectRatio?: string;
+  objectFit?: "cover" | "contain";
   rounded?: boolean;
 };
 
@@ -16,6 +18,8 @@ export function LightboxGallery({
   title,
   columns = 2,
   imageHeight = 200,
+  aspectRatio,
+  objectFit = "cover",
   rounded = false,
 }: LightboxGalleryProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -67,12 +71,17 @@ export function LightboxGallery({
               rounded ? "rounded-lg" : ""
             }`}
           >
-            <div className="relative w-full" style={{ height: `${imageHeight}px` }}>
+            <div
+              className={`relative w-full ${aspectRatio ?? ""}`}
+              style={!aspectRatio ? { height: `${imageHeight}px` } : {}}
+            >
               <Image
                 src={image}
                 alt={`${title} ${index + 1}`}
                 fill
-                className="object-cover transition duration-300 group-hover:scale-105"
+                className={`transition duration-300 group-hover:scale-105 ${
+                  objectFit === "contain" ? "object-contain" : "object-cover"
+                }`}
                 sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
               />
             </div>

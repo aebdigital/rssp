@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     images: [defaultOgImage],
   },
   icons: {
-    icon: [{ url: "/favicon.ico" }],
+    icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },

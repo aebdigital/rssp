@@ -187,9 +187,8 @@ export function SiteFooter() {
 
         <div className="site-container flex flex-col gap-4 border-t border-[#333] pt-5 text-sm md:flex-row md:items-center md:justify-between">
           <div className="text-[#ccc]">
-            Tvorba stránky -{" "}
-            <a href="https://aebdigital.sk" target="_blank" rel="noopener noreferrer" className="underline">
-              AEB Digital
+            <a href="https://aebdigital.sk" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
+              Tvorba stránky - AEB Digital
             </a>
           </div>
           <p className="text-[#999]">&copy; 2026 {company.name}</p>

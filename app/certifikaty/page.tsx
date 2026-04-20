@@ -21,7 +21,8 @@ export default function CertificatesPage() {
             images={certificates.map((certificate) => certificate.image)}
             title="Dosiahnuté certifikáty"
             columns={4}
-            imageHeight={360}
+            aspectRatio="aspect-[210/297]"
+            objectFit="contain"
             rounded
           />
         </div>

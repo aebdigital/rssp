@@ -54,26 +54,21 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-
-          <div className="mt-10 text-center">
-            <Link href="/sluzby" className="blue-button inline-flex items-center gap-3 px-[35px] py-[18px] uppercase tracking-[0.5px]">
-              Zobraziť všetky služby
-            </Link>
-          </div>
         </div>
       </section>
 
       <section className="bg-white py-[100px]">
         <div className="site-container">
-          <div className="mb-[60px] text-center">
+          <div className="mb-[60px]">
             <h2 className="section-outline-title">Projekty</h2>
           </div>
 
           <div className="grid gap-5 lg:grid-cols-3">
             {featuredProjects.map((project) => (
-              <article
+              <Link
                 key={project.slug}
-                className="group relative bg-white p-5 shadow-[0_5px_20px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+                href="/galeria"
+                className="group relative block bg-white p-5 shadow-[0_5px_20px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
               >
                 <div className="relative h-[310px] overflow-hidden">
                   <Image
@@ -83,14 +78,8 @@ export default function HomePage() {
                     className="object-cover transition duration-300 group-hover:scale-110"
                     sizes="(min-width: 1024px) 33vw, 100vw"
                   />
-                  <div className="absolute right-[15px] top-[15px] flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[var(--brand-blue)] opacity-0 transition duration-300 group-hover:scale-100 group-hover:opacity-100">
-                    →
-                  </div>
                 </div>
-                <div className="absolute right-0 top-1/2 w-[58%] -translate-y-1/2 bg-[var(--brand-blue)] p-[15px] shadow-[0_4px_20px_rgba(0,0,0,0.15)]">
-                  <h3 className="text-[1.3rem] font-light text-white">{project.title}</h3>
-                </div>
-              </article>
+              </Link>
             ))}
           </div>
 

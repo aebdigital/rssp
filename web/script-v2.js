@@ -209,10 +209,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="footer-bottom">
                         <div class="footer-website-credit">
-                            <span>Tvorba stránky - <a href="https://aebdigital.com" target="_blank" rel="noopener">AEB Digital</a></span>
+                            <span>Tvorba stránky - <a href="https://aebdigital.sk" target="_blank" rel="noopener">AEB Digital</a></span>
                         </div>
                         <div class="footer-copyright">
-                            <p>&copy; 2024 Stavebný sociálny podnik s.r.o.</p>
+                            <p>&copy; 2026 Stavebný sociálny podnik s.r.o.</p>
                         </div>
                     </div>
                 </div>

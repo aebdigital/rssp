@@ -62,7 +62,7 @@ export default function EnvironmentPage() {
             </div>
 
             <div className="relative flex h-full flex-col">
-              <div className="relative min-h-[500px] w-[80%]">
+              <div className="relative min-h-[400px] md:min-h-[500px] w-full lg:w-[80%]">
                 <Image
                   src="/sources/Zivotne prostredie.jpg"
                   alt="Environmentálny prístup v stavebníctve"
@@ -72,11 +72,11 @@ export default function EnvironmentPage() {
                 />
               </div>
 
-              <div className="absolute right-[-10px] top-[-30px] flex min-w-[250px] items-center gap-5 bg-[#333] p-[25px] text-white shadow-[0_8px_28px_rgba(0,0,0,0.15)]">
+              <div className="absolute right-0 lg:right-[-10px] top-[-30px] flex min-w-[200px] md:min-w-[250px] items-center gap-5 bg-[#333] p-[20px] md:p-[25px] text-white shadow-[0_8px_28px_rgba(0,0,0,0.15)]">
                 <div className="text-[2.2rem] font-light leading-[0.9]">ISO 14001</div>
                 <div className="text-sm uppercase tracking-[0.5px]">certifikát</div>
               </div>
-              <div className="absolute right-[-10px] top-[130px] flex min-w-[250px] items-center gap-5 bg-[var(--brand-blue)] p-[25px] text-white shadow-[0_8px_28px_rgba(0,0,0,0.15)]">
+              <div className="absolute right-0 lg:right-[-10px] top-[65px] flex min-w-[200px] md:min-w-[250px] items-center gap-5 bg-[var(--brand-blue)] p-[20px] md:p-[25px] text-white shadow-[0_8px_28px_rgba(0,0,0,0.15)]">
                 <div className="text-[2.2rem] font-light leading-[0.9]">EMAS</div>
                 <div className="text-sm uppercase tracking-[0.5px]">registrácia</div>
               </div>
